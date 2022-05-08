@@ -34,13 +34,13 @@ def vid_capture(path):
         if ret:
             frame_count += 1
             print(frame_count, ' / ', total_frame_count)
-            pil_image = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_RGB2BGR))
+            org_pil_image = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_RGB2BGR))
             # pil_image = pil_image.resize((270,270))
-            org_img, aug_img = img_aug(pil_image)
+            # org_img, aug_img = img_aug(pil_image)
             save_path = f"../outputs/{vid_path.split('/')[-1].split('.')[0]}/{vid_path.split('/')[-1].split('.')[0]}_{str(frame_count)}.jpg"
-            aug_save_path = f"../outputs/{vid_path.split('/')[-1].split('.')[0]}/{vid_path.split('/')[-1].split('.')[0]}_aug_{str(frame_count)}.jpg"
-            org_img.save(save_path)
-            aug_img.save(aug_save_path)
+            # aug_save_path = f"../outputs/{vid_path.split('/')[-1].split('.')[0]}/{vid_path.split('/')[-1].split('.')[0]}_aug_{str(frame_count)}.jpg"
+            org_pil_image.save(save_path)
+            # aug_img.save(aug_save_path)
         else:
             break
 

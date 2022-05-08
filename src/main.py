@@ -17,6 +17,7 @@ with open('csv_record/processed.csv') as csv_file:
             processed.append(row[0])
         else:
             continue
+
 for vid_path in vid_paths:
     vid_name = vid_path.split('/')[-1].split('.')[0]
     if vid_path not in processed:
